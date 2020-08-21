@@ -1,5 +1,383 @@
-<html>
-   <body>
-      <h1>This is a Header</h1>
-   </body>
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" control="width=device-width, initial-scale=1" />
+        <!--build:css css/main.css-->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+        <link rel="stylesheet" href="css/styles.css">
+        <!--endbuild-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rowdies|Open+Sans" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap"/>
+    
+        <title>Goh's Kung Fu</title>
+    </head>
+
+<body>
+
+<header class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 col-sm-3 col-md-2 align-self-center">
+                <img src="img/logo.png" class="img-fluid"/>
+            </div>
+            <div class="col-6">
+                <h1>GOH'S KUNG FU</h1>
+                <h2>Learn something powerful</h2>  
+            </div>
+        </div>
+    </div>
+</header>
+<nav class="navbar navbar-expand-sm navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="img/logo.png" height="40" width="40"/></a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="nucampNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-home fa-lg"></i>Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fa fa-info fa-lg"></i>About</a></li>
+                <li class="nav-item"><a class="nav-link" href="Schedule.html"><i class="fa fa-calendar fa-lg"></i>Schedule</a></li>
+                <li class="nav-item"><a class="nav-link" role="button" data-toggle="modal" data-target="#tryClass"><i class="fa fa-check-square-o fa-lg"></i>Sign-up for a free class</a></li>
+                <li class="nav-item"><a class="nav-link" role=button data-toggle="modal" data-target="#covidResponse" style="background-color: rgba(212, 16, 16, 0.774)">COVID 19 Resopnse</a></a></li>
+            </ul>
+
+            <!--loginModalButton-->
+            <span class="navbar-text ml-auto">              
+                <a role="button" data-toggle="modal" data-target="#loginModal">
+                    <i class="fa fa-sign-in"></i> Student Login
+                </a>
+            </span>
+        </div>
+    </div>
+</nav>
+
+<div id="tryClass" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header  bg-warning text-light">
+                <h3 class="modal-title">Sign-up for a free class</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="firstName" class="col-md-2 col-form-label">First Name</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lastName" class="col-md-2 col-form-label">Last Name</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="lastName" name="firstName" placeholder="Last Name" />
+                        </div>    
+                    </div>
+                    <div class="form-group row">
+                        <label for="areaCode" class="col-md-2 col-form-label">Contact Tel.</label>
+                        <div class="col-5 col-md-3">
+                            <input type="tel" class="form-control" id="areaCode" name="areaCode" placeholder="Area code" />
+                        </div>
+                        <div class="col-7">
+                            <input type="tel" class="form-control" name="telNum" name="telNum" placeholder="Tel. number" />
+                        </div>
+                    </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-md-2 col-form-label">Email</label>
+                            <div class="col-md-10">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" />
+                            </div>
+                        </div>
+                    <div class="form-group row">
+                        <div class="col offset-md-2">
+                            Which class would you like to try?
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="kungFu" name="curriculum" value="kungFu" />
+                                <label for="contactYes" class="form-check-label">Kung Fu</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="sanda" name="curriculum" value="sanda" />
+                                <label for="contactNo" class="form-check-label">Sanda</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="wushu" name="curriculum" value="wushu" />
+                                <label for="contactYes" class="form-check-label">Wushu</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="taiChi" name="curriculum" value="taiChi" />
+                                <label for="contactYes" class="form-check-label">Tai Chi</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-md-2 col-md-10">
+                            <button type="submit" class="btn btn-warning">Sign-up</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                          <p><strong>We will be in touch shortly to discuss you free class.</strong></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--loginModal-->
+<div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Login</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label class="sr-only" for="loginEmail">Email address</label>
+                                <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-12">
+                                <label class="sr-only" for="loginPassword">Password</label>
+                                <input type="password" class="form-control form-control-sm" id="loginPassword" placeholder="Password">
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="covidResponse" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header  bg-danger text-light">
+                <h3 class="modal-title">Our response to Covid 19</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                Goh's Kung Fu indoor facility is currently closed but we are running Zoom classes. Please get in touch with us if you would like to learn with us at home!
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <!-- Slide One -->
+        <div class="carousel-item active" style="background-image: url('img/staffspin.jpeg')">
+            <div class="carousel-caption d-none d-md-block">
+            <h3>First Slide</h3>
+            <p>This is a description for the first slide.</p>
+            </div>
+        </div>
+        <!-- Slide Two -->
+        <div class="carousel-item" style="background-image: url('img/splits.jpeg')">
+        </div>
+        <!-- Slide Three -->
+        <div class="carousel-item" style="background-image: url('img/LionDance.jpg')">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+    </a>
+</div>
+<hr/>
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <img class="card-img-top" src="img/kids.jpeg" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">For thousands of years, the Chinese people have practiced Kung Fu with emphasis on health, art and self-defense. Today Kung Fu and Tai Chi are practiced at Goh's Kung Fu with the same values still holding true. At our school you can study traditional kung fu, tai chi, contemporary wushu and sanda(sanshou). </p>
+           <div class="container"> 
+            <div class="row">
+                <div class=col-md-4>
+                    <ul>
+                        <li>Determination</li>
+                        <li>Self Discipline</li>
+                        <li>Humility</li>
+                        <li>Strength</li>
+                        <li>Stress Relief</li>
+                        <li>Stamina</li>
+                    <ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li>Mindfulness</li>
+                        <li>Self Confidence</li>
+                        <li>Flexibility</li>
+                        <li>Body Coordination</li>
+                        <li>Respect</li>
+                        <li>And it's a Great Workout!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-2 align-self-center">
+                        <a class="btn btn-warning" role="button" data-toggle="modal" data-target="#tryClass">  
+                         <i class="fa fa-check-square-o fa-lg"></i>Sign-up for a free class</a></li>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<hr>
+
+
+<div class="media">
+    <div class="media-body">
+      <h3 class="mt-0 mb-1">Our Philosophy</h3>
+      Kung fu training improves health and fitness, cardiovascular efficiency, flexibility, muscle strength and body compisition. The positive qualities developed through the training, such as: discipline, confidence, respect, determination and humility, improve the quality of the mind and are beneficial in daily life situations.</p>
+                
+      <p class="card-text">Goh's Kung Fu provides a caring, safe and well structured environment where students can develop their minds and bodies through its curriculum and training programs. Through their training, they will learn goal setting and the true value of hard work. As a fitness routine Goh's Kung Fu curriculum improves health, muscle toning and releases stress and tension. </p>
+    </div>
+    <iframe class="align-self-end" width="350" height="200" src="https://www.youtube.com/embed/BSPu-1C10eE?rel=0" frameborder="0" allow="encrypted-media" allowfullscreen=""></iframe>
+  </div>
+
+  
+
+
+
+<div class="containter">
+<div class="row row-content">
+    <div class = "col-2"></div>
+    <div class="col-md-12">
+        <h3>WHAT WE TEACH</h3>
+        <div id="accordian">
+            <div class="card">
+                <div role="tab" class="card-header">
+                    <h4> <a data-toggle="collapse" data-target="#kungFu">Kung Fu</a></h4>
+                    <div class="collapse show" id="kungFu" data-parent="#accordian">
+                        <div class="card-body">
+                            <div class="media">
+                                <img class="mr-3" src="img/kungfu.jpeg" alt="Kung Fu Punch">
+                                <div class="media-body">
+                                  Kung fu is one of the oldest and most widely practiced styles of martial arts, our forms are graceful, artistic; yet explosive. It teaches effective hand and kicking techniques with proper body coordiation. it is unique because it teaches courage and determination without aggressive overtones.
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div role="tab" class="card-header">
+                    <h4><a class="collapsed" data-toggle="collapse" data-target="#sanda"> Sanda </a></h4>
+                    <div class="collapse" id="sanda" data-parent="#accordian">
+                        <div class="card-body">
+                            <div class="media">
+                                <img class="mr-3" src="img/sanda.jpeg" alt="Sanda Kick">
+                                <div class="media-body">
+                                    Sanda is a modern unarmed combat sport which developed from traditional kung fu techniques and primarily makes use of punching, kicking, throwing, wrestling and defensive techniques. 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="card">
+                <div role="tab" class="card-header">
+                    <h4><a class="collapsed" data-toggle="collapse" data-target="#wushu">Wushu</a></h4>
+                    <div class="collapse" id="wushu" data-parent="#accordian">
+                        <div class="card-body">
+                            <div class="media">
+                            <img class="mr-3" src="img/wushu.jpeg" alt="Wushu jump kick with sword">
+                            <p class= "d-none d-sm-block">Contemporary wushu is dynamic, graceful and explosive. It is the style of action movies made popular by famous stars like Jet Li. At Goh's Kung Fu you will learn moves and chorography including open hand and weapons work as well as physical conditioning to increase jump power and flexibility.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            <div class="card">
+                <div role="tab" class="card-header">
+                    <h4><a class="collapsed" data-toggle="collapse" data-target="#taiChi">Tai Chi </a></h4>
+                    <div class="collapse" id="taiChi" data-parent="#accordian">
+                        <div class="card-body">
+                            <div class="media">
+                            <img class="mr-3" src="img/taichi.jpeg" alt="Tai Chi">
+                            <p class= "d-none d-sm-block">As an internal style practiced by millions of Chinese today, this low impact exercise regulates the central nervous system and helps to relieve stress. Tai Chi training emphasizes body coordiation, balance, relaxation, breathing and smoothness. it is practiced as a preventative exercise for stress, high blood pressure and heart problems. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+</div>    
+</div>
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">             
+            <div class="col-3 col-sm-2 offset-1">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+            <li> <a href="#">Home</a></li>
+            <li><a href ="aboutus.html">About</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+    </div>
+    <div class="col-3 col-sm-2">
+    <img src="img/usawkf.jpeg">
+    </div>
+    <div class="col-3 col-sm-3 text-center">
+        <h5>Social</h5>
+        <a class="btn btn-social-icon btn-instagram" href="https://www.instagram.com/gohskungfu/"><i class="fa fa-instagram"></i></a>
+        <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/gohs.kungfu"><i class="fa fa-facebook"></i></a>
+        <!--<a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>-->
+        <a class="btn btn-social-icon btn-youtube" href="https://www.youtube.com/channel/UCigKhv6S_UTQfXmkopDhU5g"><i class="fa fa-youtube"></i></a>
+    </div>
+    <div class="col-sm-3 text-center">
+        <h5>Contact</h5>
+        <a role="button" class="btn btn-link" href="tel:+443.808.0048"><i class="fa fa-phone"></i>443.808.0048</a><br />
+        <a role="button" class="btn btn-link" href="mailto:info@gohskungfu.com"><i class="fa fa-envelope-o"></i> info@gohskungfu.com</a>
+    </div>                
+</div>
+</div>
+</footer>
+    
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"> </script>
+</body>
 </html>

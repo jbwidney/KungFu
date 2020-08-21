@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" control="width=device-width, initial-scale=1" />
+    <!--build:css css/main.css-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <!--endbuild-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rowdies|Open+Sans" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap"/>
+
+    <title>Goh's Kung Fu</title>
+</head>
+<body>
+    <header class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-sm-3 col-md-2 align-self-center">
+                    <img src="img/logo.png" class="img-fluid"/>
+                </div>
+                <div class="col-6">
+                    <h1>GOH'S KUNG FU</h1>
+                    <h2>Learn something powerful</h2>  
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" height="40" width="40"/></a>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="nucampNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item active"><a class="nav-link" href="index.html"><i class="fa fa-home fa-lg"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-info fa-lg"></i>About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Schedule.html"><i class="fa fa-calendar fa-lg"></i>Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" role="button" data-toggle="modal" data-target="#tryClass"><i class="fa fa-check-square-o fa-lg"></i>Sign-up for a free class</a></li>
+                    <li class="nav-item"><a class="nav-link" role=button data-toggle="modal" data-target="#covidResponse" style="background-color: rgba(212, 16, 16, 0.774)">COVID 19 Resopnse</a></a></li>
+                </ul>
+    
+                <!--loginModalButton-->
+                <span class="navbar-text ml-auto">              
+                    <a role="button" data-toggle="modal" data-target="#loginModal">
+                        <i class="fa fa-sign-in"></i> Student Login
+                    </a>
+                </span>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="tryClass" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header  bg-warning text-light">
+                    <h3 class="modal-title">Sign-up for a free class</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row">
+                            <label for="firstName" class="col-md-2 col-form-label">First Name</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="lastName" class="col-md-2 col-form-label">Last Name</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="lastName" name="firstName" placeholder="Last Name" />
+                            </div>    
+                        </div>
+                        <div class="form-group row">
+                            <label for="areaCode" class="col-md-2 col-form-label">Contact Tel.</label>
+                            <div class="col-5 col-md-3">
+                                <input type="tel" class="form-control" id="areaCode" name="areaCode" placeholder="Area code" />
+                            </div>
+                            <div class="col-7">
+                                <input type="tel" class="form-control" name="telNum" name="telNum" placeholder="Tel. number" />
+                            </div>
+                        </div>
+                            <div class="form-group row">
+                                <label for="email" class="col-md-2 col-form-label">Email</label>
+                                <div class="col-md-10">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" />
+                                </div>
+                            </div>
+                        <div class="form-group row">
+                            <div class="col offset-md-2">
+                                Which class would you like to try?
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" id="kungFu" name="curriculum" value="kungFu" />
+                                    <label for="contactYes" class="form-check-label">Kung Fu</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" id="sanda" name="curriculum" value="sanda" />
+                                    <label for="contactNo" class="form-check-label">Sanda</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" id="wushu" name="curriculum" value="wushu" />
+                                    <label for="contactYes" class="form-check-label">Wushu</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" id="taiChi" name="curriculum" value="taiChi" />
+                                    <label for="contactYes" class="form-check-label">Tai Chi</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="form-group row">
+                            <label for="feedback" class="col-md-2 col-form-label">Your Feedback</label>
+                            <div class="col-md-10">
+                                <textarea class="form-control" id="feedback" name="feedback" rows="8"> </textarea>
+                            </div>
+                        </div>
+                        -->
+                        <div class="form-group row">
+                            <div class="offset-md-2 col-md-10">
+                                <button type="submit" class="btn btn-warning">Sign-up</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2"></div>
+                            <div class="col-8">
+                              <p><strong>We will be in touch shortly to discuss you free class.</strong></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--loginModal-->
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Login</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginEmail">Email address</label>
+                                    <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter email">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginPassword">Password</label>
+                                    <input type="password" class="form-control form-control-sm" id="loginPassword" placeholder="Password">
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label"> Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="covidResponse" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header  bg-danger text-light">
+                    <h3 class="modal-title">Our response to Covid 19</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    Goh's Kung Fu indoor facility is currently closed but we are running Zoom classes. Please get in touch with us if you would like to learn with us at home!
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="img-fluid">
+   <div class="container" >
+        <div class="row">
+        <div class="col-md-12">
+                <h2 class="text-center">History</h2>
+                <img src="img/history.jpg">
+            </div>
+        </div>
+    </div>
+</div> 
+
+<hr>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="img/SifuGoh.jpg">
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Sifu Anthony Goh</h5>
+                  
+                  <p class="card-text">  In 1983 Goh's Kung Fu was founded in Baltimore Maryland by Sifu Anthony Goh, who learned, competed and taught for 14 years in Asia and Europe prior to his teaching in the U.S. Sifu Goh has served on the IWUF (International Wushu Federation ) Executive Committee since 1995, and has held the position of Vice President since 2003. In 2014 Sifu Goh was appointed to be the Executive Vice President of the IWUF. He is also the founding president of both the USA Wushu-Kungfu Federation (1993-present) and the Pan American Wushu Federation (1995-present). He was the host and organizer of the 3rd World Wushu Championships held in 1995 in Baltimore, Maryland.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+<h2 class="text-center">Faculty</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-sm-3">1
+            <figure class="figure">
+            <a role="button" data-toggle="modal" data-target="#sifuKevinModal">
+                <img src="img/SifuKevin.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+            </a>
+            <figcaption class="figure-caption text-right">Sifu Kevin Law</figcaption>
+        </figure></div>
+        <div class="col-xs-6 col-sm-3">2
+            <figure class="figure">
+                <a role="button" data-toggle="modal" data-target="#sijehMelanieModal">
+                    <img src="img/Sijeh Melanie.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                </a>
+                <figcaption class="figure-caption text-right">Sijeh Melanie Lester</figcaption>
+            </figure>
+        </div>
+        <div class="col-xs-6 col-sm-3">3<figure class="figure">
+            <a role="button" data-toggle="modal" data-target="#sihengSteveModal">
+                <img src="img/Siheg Steve.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+            </a>
+            <figcaption class="figure-caption text-right">Siheng Steve Yeung</figcaption>
+        </figure></div>
+        <div class="col-xs-6 col-sm-3">4
+            <figure class="figure">
+                <a role="button" data-toggle="modal" data-target="#sihengAlanModal">
+                    <img src="img/Siheng Alan China.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                </a>
+                <figcaption class="figure-caption text-right">Siheng Alan Chen</figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"><figure class="figure">
+            <a role="button" data-toggle="modal" data-target="#sihengMarkModal">
+                <img src="img/Siheng Mark.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+            </a>
+            <figcaption class="figure-caption text-right">Siheng Mark Lorenzo</figcaption>
+        </figure></div>
+        <div class="col-md-3"><figure class="figure">
+            <a role="button" data-toggle="modal" data-target="#sijehPamModal">
+                <img src="img/Sijeh Pam.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+            </a>
+            <figcaption class="figure-caption text-right">Sijeh Pam</figcaption>
+        </figure></div>
+        <div class="col-md-3">7</div>
+        <div class="col-md-3">8</div>
+    </div>
+</div>
+
+<div id="sifuKevinModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Sifu Kevin Law</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <p>I started at Goh's Kung Fu in 1994 because my mom wanted me to be a stronger kid. After all of these years, I stay excited about being at the school every day because I love watching our students work hard and become better at kung fu. Kung fu is a constant challenge and allows me to always improve myself. It is something I try to do in other parts of my life as well. In my own training I try to reach higher goals and maintain the standards set by Chinese martial arts practitioners before me. In my own practice I am always striving to be faster and move with more power. When I am teaching I enjoy watching people have those “ah-ha” moments when they have made a noticeable improvement through cognitive processing of their practice and better understanding. Like my students, my teaching is always improving through hard work and experience.
+                        Sifu Kevin teaches Wushu at 6:50pm on Tuesdays and Thursdays, Taiji at 6:50pm on Wednesdays, Invitational Advanced Class at 7pm on Fridays and Advanced Weapons at 12:45pm on Saturdays.                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="sijehMelanieModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Sijeh Melanie Lester</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <p>I started at Goh's Kung Fu in 2005. I was interested in kung fu even as kid watching "Black Belt Theatre" movies with my family. I was introduced to Goh's Kung Fu through Siheng Colin Barnhill when I was doing costumes for a locally produced independent film. Siheng Colin taught at the school for many years and eventually helped me get my black sash. On set he was talented but still humble and fun to joke around with in the wardrobe tent. His kung fu and attitude made me want to try classes at Goh's Kung Fu. Once I finished my trial class I was in love with the school. All of the instructors were so skillful and really encouraging. I felt at home and part of the community right away. I am happiest being at the school around people who help each other and push themselves to improve every day. For me kung fu presents a framework for my physical and mental growth. It is constant practice yielding very measurable improvements. I feel grateful and rewarded every time I'm at the school. Lately I've been most excited about building power in my wushu forms and being more fluid with my tai chi. Teaching at Goh's Kung Fu is so rewarding. I aim to be like my instructors and make students feel supported and empowered through their practice.
+                    Sijeh Melanie teaches the Green Sash Class at 5:30pm on Mondays, Blue and Above Class at 5:30pm on Tuesdays, White and Yellow at 5:30pm on Wednesdays and co-teaches the Community Tai Chi Class at 9am on Saturdays.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="sihengSteveModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Siheng Steve Yeung</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <p> I started at Goh's Kung Fu in 2000 with my family because I wanted my children to learn Chinese Kung Fu, discipline, respect and hard work. I'm still training and teaching at Goh's Kung Fu because we respect and support each other to achieve a higher level than what we could achieve on our own. In Chinese "kung fu" means skill developed through hard work. It teaches me humility because no matter how much you've improved, you can always get better. I've always told my children that what we learn practicing kung fu applies to our everyday life: in our schooling, work and family. I continue to learn new skills from other instructors and Sifu Kevin. It's great to learn new things because it challenges your mind and body. With practice I discover how to move my body to generate more speed and power. When you reach that discovery it is very fulfilling and it takes continuous hard work to maintain it. I enjoy teaching beginners and see them grow. It is very rewarding as an instructor to see new students who are stiff and awkward in the beginning and become more flexible and physically coordinated in a fairly short period of time.
+                        Siheng Steve teaches White, Yellow, Green Sash Class at 10am and Beginner Weapons at 11am on Saturdays.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="sihengAlanModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Siheng Alan Chen</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <p> Bio coming soon!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="sihengMarkModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Siheng Mark Lorenzo</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <p> I started at Goh's Kung Fu in 2000 with my family because I wanted my children to learn Chinese Kung Fu, discipline, respect and hard work. I'm still training and teaching at Goh's Kung Fu because we respect and support each other to achieve a higher level than what we could achieve on our own. In Chinese "kung fu" means skill developed through hard work. It teaches me humility because no matter how much you've improved, you can always get better. I've always told my children that what we learn practicing kung fu applies to our everyday life: in our schooling, work and family. I continue to learn new skills from other instructors and Sifu Kevin. It's great to learn new things because it challenges your mind and body. With practice I discover how to move my body to generate more speed and power. When you reach that discovery it is very fulfilling and it takes continuous hard work to maintain it. I enjoy teaching beginners and see them grow. It is very rewarding as an instructor to see new students who are stiff and awkward in the beginning and become more flexible and physically coordinated in a fairly short period of time.
+                        Siheng Steve teaches White, Yellow, Green Sash Class at 10am and Beginner Weapons at 11am on Saturdays.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="sijehPamModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Sijeh Pam</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <p> I started at Goh's Kung Fu in 2000 with my family because I wanted my children to learn Chinese Kung Fu, discipline, respect and hard work. I'm still training and teaching at Goh's Kung Fu because we respect and support each other to achieve a higher level than what we could achieve on our own. In Chinese "kung fu" means skill developed through hard work. It teaches me humility because no matter how much you've improved, you can always get better. I've always told my children that what we learn practicing kung fu applies to our everyday life: in our schooling, work and family. I continue to learn new skills from other instructors and Sifu Kevin. It's great to learn new things because it challenges your mind and body. With practice I discover how to move my body to generate more speed and power. When you reach that discovery it is very fulfilling and it takes continuous hard work to maintain it. I enjoy teaching beginners and see them grow. It is very rewarding as an instructor to see new students who are stiff and awkward in the beginning and become more flexible and physically coordinated in a fairly short period of time.
+                        Siheng Steve teaches White, Yellow, Green Sash Class at 10am and Beginner Weapons at 11am on Saturdays.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">             
+            <div class="col-3 col-sm-2 offset-1">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+            <li> <a href="#">Home</a></li>
+            <li><a href ="aboutus.html">About</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+    </div>
+    <div class="col-3 col-sm-2">
+    <img src="img/usawkf.jpeg">
+    </div>
+    <div class="col-3 col-sm-3 text-center">
+        <h5>Social</h5>
+        <a class="btn btn-social-icon btn-instagram" href="https://www.instagram.com/gohskungfu/"><i class="fa fa-instagram"></i></a>
+        <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/gohs.kungfu"><i class="fa fa-facebook"></i></a>
+        <!--<a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>-->
+        <a class="btn btn-social-icon btn-youtube" href="https://www.youtube.com/channel/UCigKhv6S_UTQfXmkopDhU5g"><i class="fa fa-youtube"></i></a>
+    </div>
+    <div class="col-sm-3 text-center">
+        <h5>Contact</h5>
+        <a role="button" class="btn btn-link" href="tel:+443.808.0048"><i class="fa fa-phone"></i>443.808.0048</a><br />
+        <a role="button" class="btn btn-link" href="mailto:info@gohskungfu.com"><i class="fa fa-envelope-o"></i> info@gohskungfu.com</a>
+    </div>                
+</div>
+</div>
+</footer>
+
+
+  
+
+
+
+
+
+   
+
+
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"> </script>
+</body>
+</html>
+</html>
